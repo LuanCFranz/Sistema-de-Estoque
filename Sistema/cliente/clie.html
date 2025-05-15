@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Cliente</title>
+    <link rel="stylesheet" href="clie.css">
+</head>
+
+ <body>
+  <div class="container">
+    <h1>Cadastro de Cliente</h1>
+    <form id="fornecedorForm" action="#" method="POST" novalidate>
+      <!-- Row 1 -->
+      <div class="razao-social">
+        <label for="razaoSocial">Nome Completo</label>
+        <input type="text" id="razaoSocial" name="razaoSocial" placeholder="Razão Social" required />
+      </div>
+      <!-- Row 2 -->
+      <div class="cnpj-cpf">
+        <label for="cnpjCpf">CPF</label>
+        <input type="text" id="Cpf" name="Cpf" placeholder="000.000.000-00" required />
+      </div>
+      <div class="inscricao-estadual">
+        <label for="inscricaoEstadual">Seu RG</label>
+        <input type="text" id="RG" name="RG" placeholder="RG" />
+      </div>
+
+      <div class="codigo">
+        <label for="codigo">Código</label>
+        <input type="text" id="codigo" name="codigo" placeholder="Será gerado automaticamente" readonly disabled />
+      </div>
+
+      <!-- Endereço Row 1 -->
+      <div class="logradouro">
+        <label for="logradouro">Logradouro</label>
+        <input type="text" id="logradouro" name="logradouro" placeholder="Logradouro" required />
+      </div>
+      <div class="bairro">
+        <label for="bairro">Bairro</label>
+        <input type="text" id="bairro" name="bairro" placeholder="Bairro" required />
+      </div>
+      <div class="numero">
+        <label for="numero">Número</label>
+        <input type="text" id="numero" name="numero" placeholder="Número" required />
+      </div>
+      <div class="complemento">
+        <label for="complemento">Complemento</label>
+        <input type="text" id="complemento" name="complemento" placeholder="Complemento" />
+      </div>
+
+      <!-- Endereço Row 2 -->
+      <div class="estado">
+        <label for="estado">Estado</label>
+        <input type="text" id="estado" name="estado" placeholder="Estado" required />
+      </div>
+      <div class="cidade">
+        <label for="cidade">Cidade</label>
+        <input type="text" id="cidade" name="cidade" placeholder="Cidade" required />
+      </div>
+      <div class="area">
+        <label for="area">Área</label>
+        <input type="text" id="area" name="area" placeholder="Área" />
+      </div>
+      <div class="pais">
+        <label for="pais">País</label>
+        <input type="text" id="pais" name="pais" placeholder="País" required />
+      </div>
+
+      <!-- Contato Row -->
+      <div class="email">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="email@exemplo.com" required />
+      </div>
+      <div class="telefone-celular">
+        <label for="telefoneCelular">Telefone Celular</label>
+        <input type="tel" id="telefoneCelular" name="telefoneCelular" placeholder="(00) 90000-0000" required />
+      </div>
+      <div class="telefone-fixo">
+        <label for="telefoneFixo">Telefone Fixo</label>
+        <input type="tel" id="telefoneFixo" name="telefoneFixo" placeholder="(00) 3000-0000" />
+      </div>
+
+      <!-- Buttons -->
+      <div class="form-buttons">
+        <button id="cadastrar" type="submit">Cadastrar</button>
+        <button id="excluir" type="button">Excluir Cadastro</button>
+        <button id="consultar" type="button">Consultar</button>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

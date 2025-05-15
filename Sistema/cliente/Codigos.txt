@@ -1,0 +1,9 @@
+      <div class="nome-fantasia">
+        <label for="nomeFantasia">Nome Fantasia</label>
+        <input type="text" id="nomeFantasia" name="nomeFantasia" placeholder="Nome Fantasia" required />
+      </div>
+
+            <div class="inscricao-municipal">
+        <label for="inscricaoMunicipal">Inscrição Municipal</label>
+        <input type="text" id="inscricaoMunicipal" name="inscricaoMunicipal" placeholder="Inscrição Municipal" />
+      </div>
