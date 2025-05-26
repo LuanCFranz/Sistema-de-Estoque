@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #1a2634, #3d566e);
+    font-family: 'Montserrat', sans-serif;
+    color: #f0f3f7;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.container {
+    background: #2c3e50;
+    padding: 1.5rem 2rem 2rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    max-width: 980px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    color: #aad8f5;
+    letter-spacing: 1.4px;
+    font-size: 2.2rem;
+    text-shadow: 0 0 10px #7ac6ff;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px 30px;
+    align-items: center;
+}
+
+form > div {
+    margin-bottom: 30px;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #f0f3f7;
+    margin-bottom: 0.3rem;
+    display: block;
+    user-select: none;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    border: 1.8px solid #cbd4db;
+    font-size: 0.95rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #aad8f5;
+    box-shadow: 0 0 5px #aad8f5aa;
+    outline: none;
+}
+
+input[readonly], input[disabled] {
+    background: #e6e6e6;
+    color: #777;
+    cursor: not-allowed;
+}
+
+/* Informações Básicas */
+.codigo {
+    grid-column: span 3;
+}
+.nome {
+    grid-column: span 6;
+}
+.categoria {
+    grid-column: span 3;
+}
+
+/* Detalhes do Produto */
+.descricao {
+    grid-column: span 12;
+}
+.marca {
+    grid-column: span 4;
+}
+.modelo {
+    grid-column: span 4;
+}
+.unidade-medida {
+    grid-column: span 4;
+}
+
+/* Estoque e Preços */
+.estoque-atual {
+    grid-column: span 3;
+}
+.estoque-minimo {
+    grid-column: span 3;
+}
+.preco-custo {
+    grid-column: span 3;
+}
+.preco-venda {
+    grid-column: span 3;
+}
+
+/* Dimensões */
+.peso {
+    grid-column: span 3;
+}
+.largura {
+    grid-column: span 3;
+}
+.altura {
+    grid-column: span 3;
+}
+.profundidade {
+    grid-column: span 3;
+}
+
+/* Status */
+.status {
+    grid-column: span 12;
+}
+.codigo-barras {
+    grid-column: span 6;
+}
+.ncm {
+    grid-column: span 6;
+}
+
+/* Buttons container flexbox for spacing */
+.form-buttons {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+button {
+    padding: 0.55rem 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1.1px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    min-width: 110px;
+}
+
+button#salvar {
+    background-color: #4a90e2;
+    color: white;
+}
+
+button#salvar:hover {
+    background-color: #3678d6;
+}
+
+button#excluir {
+    background-color: #b00020;
+    color: white;
+}
+
+button#excluir:hover {
+    background-color: #800019;
+}
+
+button#cancelar {
+    background-color: #444444;
+    color: white;
+}
+
+button#cancelar:hover {
+    background-color: #222222;
+}
+
+@media (max-width: 900px) {
+    form {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 30px;
+    }
+    form > div {
+        margin-bottom: 30px;
+    }
+    .codigo, .nome, .categoria,
+    .marca, .modelo, .unidade-medida,
+    .estoque-atual, .estoque-minimo, .preco-custo, .preco-venda,
+    .peso, .largura, .altura, .profundidade,
+    .codigo-barras, .ncm, .status, .descricao {
+        grid-column: span 2;
+    }
+    .form-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    form {
+        grid-template-columns: 1fr;
+        gap: 30px 0;
+    }
+    form > div {
+        margin-bottom: 30px;
+    }
+    .codigo, .nome, .categoria,
+    .marca, .modelo, .unidade-medida,
+    .estoque-atual, .estoque-minimo, .preco-custo, .preco-venda,
+    .peso, .largura, .altura, .profundidade,
+    .codigo-barras, .ncm, .status, .descricao {
+        grid-column: span 1;
+    }
+    .form-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+    .form-buttons button {
+        width: 100%;
+    }
+}
