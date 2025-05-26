@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produto</title>
+    <link rel="stylesheet" href="prod.css">
+</head>
+<body>
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Produtos</h1>
+        
+        <form id="produtoForm">
+            <!-- Informações Básicas -->
+            <div class="codigo">
+                <label for="codigo">Código</label>
+                <input type="text" id="codigo" name="codigo" readonly>
+            </div>
+            
+            <div class="nome">
+                <label for="nome">Nome do Produto*</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            
+            <div class="categoria">
+                <label for="categoria">Categoria*</label>
+                <select id="categoria" name="categoria" required>
+                    <option value="">Selecione...</option>
+                    <option value="eletronicos">Eletrônicos</option>
+                    <option value="informatica">Informática</option>
+                    <option value="moveis">Móveis</option>
+                    <option value="vestuario">Vestuário</option>
+                </select>
+            </div>
+            
+            <!-- Detalhes do Produto -->
+            <div class="descricao">
+                <label for="descricao">Descrição</label>
+                <textarea id="descricao" name="descricao" rows="3"></textarea>
+            </div>
+            
+            <div class="marca">
+                <label for="marca">Marca</label>
+                <input type="text" id="marca" name="marca">
+            </div>
+            
+            <div class="modelo">
+                <label for="modelo">Modelo</label>
+                <input type="text" id="modelo" name="modelo">
+            </div>
+            
+            <div class="unidade-medida">
+                <label for="unidade-medida">Unidade de Medida*</label>
+                <select id="unidade-medida" name="unidade-medida" required>
+                    <option value="">Selecione...</option>
+                    <option value="un">Unidade</option>
+                    <option value="kg">Quilograma</option>
+                    <option value="g">Grama</option>
+                    <option value="l">Litro</option>
+                    <option value="m">Metro</option>
+                </select>
+            </div>
+            
+            <!-- Estoque e Preços -->
+            <div class="estoque-atual">
+                <label for="estoque-atual">Estoque Atual</label>
+                <input type="number" id="estoque-atual" name="estoque-atual" min="0" step="0.01">
+            </div>
+            
+            <div class="estoque-minimo">
+                <label for="estoque-minimo">Estoque Mínimo</label>
+                <input type="number" id="estoque-minimo" name="estoque-minimo" min="0" step="0.01">
+            </div>
+            
+            <div class="preco-custo">
+                <label for="preco-custo">Preço de Custo (R$)</label>
+                <input type="number" id="preco-custo" name="preco-custo" min="0" step="0.01">
+            </div>
+            
+            <div class="preco-venda">
+                <label for="preco-venda">Preço de Venda (R$)*</label>
+                <input type="number" id="preco-venda" name="preco-venda" min="0" step="0.01" required>
+            </div>
+            
+            <!-- Dimensões -->
+            <div class="peso">
+                <label for="peso">Peso (kg)</label>
+                <input type="number" id="peso" name="peso" min="0" step="0.001">
+            </div>
+            
+            <div class="largura">
+                <label for="largura">Largura (cm)</label>
+                <input type="number" id="largura" name="largura" min="0" step="0.01">
+            </div>
+            
+            <div class="altura">
+                <label for="altura">Altura (cm)</label>
+                <input type="number" id="altura" name="altura" min="0" step="0.01">
+            </div>
+            
+            <div class="profundidade">
+                <label for="profundidade">Profundidade (cm)</label>
+                <input type="number" id="profundidade" name="profundidade" min="0" step="0.01">
+            </div>
+            
+            <!-- Status e Códigos -->
+            <div class="status">
+                <label for="status">Status*</label>
+                <select id="status" name="status" required>
+                    <option value="ativo" selected>Ativo</option>
+                    <option value="inativo">Inativo</option>
+                    <option value="esgotado">Esgotado</option>
+                </select>
+            </div>
+            
+            <div class="codigo-barras">
+                <label for="codigo-barras">Código de Barras (EAN)</label>
+                <input type="text" id="codigo-barras" name="codigo-barras">
+            </div>
+            
+            <div class="ncm">
+                <label for="ncm">NCM</label>
+                <input type="text" id="ncm" name="ncm" placeholder="Código NCM">
+            </div>
+            
+            <!-- Botões -->
+            <div class="form-buttons">
+                <button type="submit" id="salvar">Salvar</button>
+                <button type="button" id="excluir">Excluir</button>
+                <button type="button" id="cancelar">Cancelar</button>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        // Código JavaScript pode ser adicionado aqui
+        document.getElementById('produtoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Produto salvo com sucesso!');
+            // Aqui você pode adicionar a lógica para salvar os dados
+        });
+        
+        document.getElementById('cancelar').addEventListener('click', function() {
+            if(confirm('Deseja realmente cancelar? Todos os dados não salvos serão perdidos.')) {
+                document.getElementById('produtoForm').reset();
+            }
+        });
+        
+        document.getElementById('excluir').addEventListener('click', function() {
+            if(confirm('Deseja realmente excluir este produto?')) {
+                alert('Produto excluído!');
+                // Lógica para excluir o produto
+            }
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>
