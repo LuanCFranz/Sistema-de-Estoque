@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emissão de NFC-e</title>
+    <link rel="stylesheet" href="nfce.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-cash-register"></i> VENDA NFC-e</h1>
+        
+        <div class="main-content">
+            <div class="venda-section">
+                <div class="panel">
+                    <div class="panel-header">DADOS DO CLIENTE</div>
+                    <div class="customer-info">
+                        <div>
+                            <label for="cliente-cpf"><i class="fas fa-id-card"></i> CPF/CNPJ</label>
+                            <input type="text" id="cliente-cpf" placeholder="Digite o CPF ou CNPJ">
+                        </div>
+                        <div>
+                            <label for="cliente-nome"><i class="fas fa-user"></i> Nome</label>
+                            <input type="text" id="cliente-nome" placeholder="Nome do cliente">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel">
+                    <div class="panel-header">PRODUTOS</div>
+                    <div class="produto-input">
+                        <input type="text" placeholder="Código, nome ou código de barras" autofocus>
+                        <button><i class="fas fa-plus"></i> Adicionar</button>
+                    </div>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Descrição</th>
+                                <th>Qtd</th>
+                                <th>Valor Unit.</th>
+                                <th>Total</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1001</td>
+                                <td>Notebook Dell Inspiron 15</td>
+                                <td><input type="number" class="qtd-input" value="1" min="1"></td>
+                                <td>R$ 3.499,90</td>
+                                <td>R$ 3.499,90</td>
+                                <td>
+                                    <button class="btn-danger" data-tooltip="Remover item">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2005</td>
+                                <td>Mouse Sem Fio Logitech MX Master 3</td>
+                                <td><input type="number" class="qtd-input" value="2" min="1"></td>
+                                <td>R$ 129,90</td>
+                                <td>R$ 259,80</td>
+                                <td>
+                                    <button class="btn-danger" data-tooltip="Remover item">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3012</td>
+                                <td>Teclado Mecânico RGB Redragon</td>
+                                <td><input type="number" class="qtd-input" value="1" min="1"></td>
+                                <td>R$ 349,90</td>
+                                <td>R$ 349,90</td>
+                                <td>
+                                    <button class="btn-danger" data-tooltip="Remover item">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="total-panel">
+                        <div class="total-row">
+                            <span>Subtotal:</span>
+                            <span>R$ 4.109,60</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Desconto:</span>
+                            <span>- R$ 100,00</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Total:</span>
+                            <span>R$ 4.009,60</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <div class="panel">
+                    <div class="panel-header">INFORMAÇÕES</div>
+                    <div>
+                        <label><i class="far fa-calendar-alt"></i> Data/Hora</label>
+                        <input type="text" value="25/05/2024 14:30:45" readonly>
+                    </div>
+                    <div style="margin-top: var(--spacing-md);">
+                        <label><i class="fas fa-user-tie"></i> Operador</label>
+                        <input type="text" value="João Silva (Admin)" readonly>
+                    </div>
+                    <div style="margin-top: var(--spacing-md);">
+                        <label><i class="fas fa-cash-register"></i> Caixa</label>
+                        <input type="text" value="PDV-01" readonly>
+                    </div>
+                    <div style="margin-top: var(--spacing-md);">
+                        <label><i class="fas fa-info-circle"></i> Status</label>
+                        <div style="margin-top: var(--spacing-sm);">
+                            <span class="status-badge status-active"><i class="fas fa-check-circle"></i> Venda em Andamento</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel">
+                    <div class="panel-header">PAGAMENTO</div>
+                    <div class="payment-methods">
+                        <div class="payment-method active">
+                            <i class="fas fa-money-bill-wave"></i> Dinheiro
+                        </div>
+                        <div class="payment-method">
+                            <i class="fas fa-credit-card"></i> Débito
+                        </div>
+                        <div class="payment-method">
+                            <i class="far fa-credit-card"></i> Crédito
+                        </div>
+                        <div class="payment-method">
+                            <i class="fas fa-qrcode"></i> PIX
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: var(--spacing-md);">
+                        <label><i class="fas fa-hand-holding-usd"></i> Valor Recebido</label>
+                        <input type="text" placeholder="R$ 0,00">
+                    </div>
+                    
+                    <div style="margin-top: var(--spacing-md);">
+                        <label><i class="fas fa-exchange-alt"></i> Troco</label>
+                        <input type="text" value="R$ 0,00" readonly>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn-secondary btn-large">
+                        <i class="fas fa-times"></i> Cancelar
+                    </button>
+                    <button class="btn-success btn-large">
+                        <i class="fas fa-check"></i> Finalizar Venda
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
